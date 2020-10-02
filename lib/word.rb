@@ -19,4 +19,8 @@ class Word
     @@words = {}
     @@total_rows = 0
   end
+
+  def save
+    @@words[self.id] = Word.new({:title => self.title, :id => self.id})
+  end
 end
