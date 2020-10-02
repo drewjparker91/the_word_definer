@@ -25,7 +25,7 @@ describe '#Word' do
       word = Word.new({:title => "Hello", :id => nil})
       word.save()
       Word.clear()
-      expect(Word.all).to(eq([1]))
+      expect(Word.all).to(eq([]))
     end
   end
 end
