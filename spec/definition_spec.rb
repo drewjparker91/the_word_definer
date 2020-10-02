@@ -55,5 +55,16 @@ describe '#Definition' do
       expect(definition1.body).to(eq("Hello"))
     end
   end
+
+  describe('#delete') do
+    it("deletes a definition by id") do
+      definition1 = Definition.new({:body => "Hello", :id => nil})
+      definition1.save()
+      definition2 = Definition.new({:body => "World", :id => nil})
+      definition2.save()
+      definition1.delete()
+      expect(Definition.all).to(eq([definition2]))
+    end
+  end
 end
 
