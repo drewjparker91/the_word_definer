@@ -41,7 +41,7 @@ post('/words/:id') do
   @body = params[:definition_body]
   @definition = Definition.new({:body => "#{body}", :id => nil, :word_id => ("#{@word.id}").to_i })
   @definition.save
-  # @definitions = Definition.find_by_word(params[:id].to_i)
+  @definitions = Definition.find_by_word(params[:id].to_i)
   erb(:word)
 end
 # POSTING DEFINITION TO SPECIFIC WORD

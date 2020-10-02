@@ -4,7 +4,7 @@
     <ul>
       <% @definitions.each do |definition| %>
         <li>
-          <% definition.body %>
+          <%= definition.body %>
         <li>
       <% end %>
     </ul>
@@ -14,7 +14,7 @@
 
   <form action="/words/<%= @word.id %>" method="post">
     <div class="form-group">
-      <label for="definition_body">Definitions</label>
+      <label for="definition_body">Type the definition here! Some words have multiple definitions, so feel free to type more than 1!</label>
       <input id="definition_body" name="definition_body" class='form-control' type="text">
     </div>
     <button type="submit" class="btn">Save Definition!</button>
