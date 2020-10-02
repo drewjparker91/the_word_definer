@@ -43,7 +43,7 @@ describe '#Definition' do
     it("is the same definition if it has the same attributes as another definition") do
     definition1 = Definition.new({:body => "Hello", :id => 1})
     definition2 = Definition.new({:body => "Hello", :id => 1})
-    expect(word1).to(eq(word2))
+    expect(definition1).to(eq(definition2))
     end
   end
 end
