@@ -23,4 +23,20 @@ class Word
   def save
     @@words[self.id] = Word.new({:title => self.title, :id => self.id})
   end
+
+  def ==(board_to_compare)   
+    self.title == board_to_compare.title() && self.id == board_to_compare.id()
+  end
+  
+  def self.find (id)
+    @@words[id]
+  end
+  
+  def update_title(new_title)
+    @title = new_title
+  end
+  
+  def delete
+    @@words.delete(self.id)
+  end
 end

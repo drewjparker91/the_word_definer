@@ -16,7 +16,7 @@ describe '#Word' do
     it("saves a word") do
       word = Word.new({:title => "Hello", :id => nil})
       word.save()
-      expect(Word.all).to(eq([]))
+      expect(Word.all).to(eq([word]))
     end
   end
 end
