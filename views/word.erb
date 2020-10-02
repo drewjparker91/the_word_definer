@@ -3,9 +3,9 @@
   <% if @definitions.any? %> 
     <ul>
       <% @definitions.each do |definition| %>
-        <li>
-          <%= definition.body %>
-        <li>
+        <li>         
+          <a href="/definitions/<%= definition.id %>"><%= definition.body%></a>     
+        </li>
       <% end %>
     </ul>
   <% else %>
@@ -22,8 +22,8 @@
 
   <form action="/word/<%= @word.id() %>" method="post">
     <input name="_method" type="hidden" value="delete">
-    <button type="submit">Delete Word!</button>
+    <button type="submit" class="btn">Delete Word!</button>
   </form>
+  <p><a href="/words/<%= @word.id %>/edit">Edit Word!</a></p>
+  <p><a href='/words'>Go back to your words!</a><p>
 
-  <a href='/words'>Go back to your words!</a>
-  
