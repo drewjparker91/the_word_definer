@@ -47,4 +47,13 @@ describe '#Word' do
     end
   end
 
+  describe ('#update_title') do
+    it('updates a word') do
+      word = Word.new({:title => "Helo", :id => 1})
+      word.save()
+      word.update_title("Hello")
+      expect(word.title).to(eq("Hell"))
+    end
+  end
+
 end
