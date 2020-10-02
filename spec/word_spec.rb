@@ -28,4 +28,16 @@ describe '#Word' do
       expect(Word.all).to(eq([]))
     end
   end
+
+  describe ('#find') do
+    it("finds a word by id") do
+      word1 = Word.new({:title => "Hello", :id => nil})
+      word1.save()
+      word2 = Word.new({:title => "World", :id => nil})
+      word2.save()
+      expect(Word.find(2)).to(eq(word1))
+    end
+  end
+
+
 end
