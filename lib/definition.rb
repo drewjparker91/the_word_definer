@@ -33,8 +33,8 @@ require 'pry'
       @@definitions[id]
     end
 
-    def update_definitions(new_definition)
-      @definition = new_definition
+    def update_body(new_body)
+      @body = new_body
     end
 
     def delete

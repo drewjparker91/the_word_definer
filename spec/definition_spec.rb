@@ -46,5 +46,14 @@ describe '#Definition' do
     expect(definition1).to(eq(definition2))
     end
   end
+
+  describe ('#update_body') do
+    it('updates a definition') do
+      definition1 = Definition.new({:body => "Helo", :id => 1})
+      definition1.save()
+      definition1.update_body("Hello")
+      expect(definition1.body).to(eq("Hello"))
+    end
+  end
 end
 
