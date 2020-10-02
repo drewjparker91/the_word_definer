@@ -1,0 +1,26 @@
+<div class="jumbotron">
+  <h1>WoRd DeFiNiTiOnS</h1>
+</div>
+
+<h4>TyPe In A wOrD aNd ThEn ClIcK oN tHe WoRd To CrEaTe A DeFiNiTiOn<h4>
+<h4>YoUr WoRdS</h4>
+
+<% if @words.any? %>
+  <ul>
+    <% @words.each do |word| %>
+    <li>
+    <a href="/words/<%= word.id %>" class="btn btn-success"><%= word.title %></a>
+    </li>
+  <% end %>
+  </ul>
+  <% else %>
+    <p>There are no words! Create some!</p>
+  <% end %>
+
+<form action="/words" method="post">
+  <div class="form-group">
+    <label for="word_title">Enter a word here!</label>
+    <input id="word_title" name="word_title" class="form-control" type="text">
+  </div>
+  <button type="submit" class="btn">Save Word!</button>
+</form>
