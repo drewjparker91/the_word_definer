@@ -43,7 +43,7 @@ describe '#Word' do
     it("is the same word if it has the same attributes as another word") do
     word1 = Word.new({:title => "Groceries", :id => 1})
     word2 = Word.new({:title => "Groceries", :id => 1})
-    expect(word1).to(eq(word1))
+    expect(word1).to(eq(word2))
     end
   end
 
