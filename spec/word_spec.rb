@@ -19,4 +19,13 @@ describe '#Word' do
       expect(Word.all).to(eq([word]))
     end
   end
+
+  describe ('#clear') do
+    it("clears a word") do
+      word = Word.new({:title => "Hello", :id => nil})
+      word.save()
+      Word.clear()
+      expect(Word.all).to(eq([1]))
+    end
+  end
 end
