@@ -16,6 +16,7 @@ end
 
 get('/words/:id') do
   @word = Word.find(params[:id].to_i())
+  @definitions = Definition.find_by_word(params[:id].to_i)
   erb(:word)
 end
 
@@ -34,6 +35,15 @@ post('/words') do
   erb(:words)
 end
 
+
+post('/words/:id') do
+  @word = Word.find(params[:id].to_i)
+  @body = params[:definition_body]
+  @definition = Definition.new({:body => "#{body}", :id => nil, :word_id => ("#{@word.id}").to_i })
+  @definition.save
+  # @definitions = Definition.find_by_word(params[:id].to_i)
+  erb(:word)
+end
 # POSTING DEFINITION TO SPECIFIC WORD
 # post('/boards/:id') do
 #   @board = Board.find(params[:id].to_i)

@@ -24,19 +24,23 @@ class Word
     @@words[self.id] = Word.new({:title => self.title, :id => self.id})
   end
 
-  def ==(board_to_compare)   
-    self.title == board_to_compare.title() && self.id == board_to_compare.id()
+  def ==(word_to_compare)   
+    self.title == word.title() && self.id == word.id()
   end
   
   def self.find (id)
     @@words[id]
   end
   
-  def update_title(new_title)
-    @title = new_title
+  def update_title(title)
+    @title = title
   end
   
   def delete
     @@words.delete(self.id)
+  end
+
+  def defs
+    Definition.find_by_word(self.id)
   end
 end
