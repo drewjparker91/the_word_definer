@@ -1,5 +1,6 @@
 require 'pry'
   class Definition
+    attr_reader :body, :id
     attr_accessor :body, :id
 
     @@definitions = {}
@@ -20,7 +21,7 @@ require 'pry'
     end
 
     def ==(definition_to_compare)
-      self.body == message_to_compare.body() && self.id == message_to_compare.id
+      self.body == definition_to_compare.body() && self.id == definition_to_compare.id
     end
 
     def self.clear

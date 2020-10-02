@@ -12,5 +12,13 @@ describe '#Definition' do
     end
   end
 
+  describe ('#save') do
+    it("saves a definition") do
+      word = Definition.new({:body => "Hello", :id => nil})
+      word.save()
+      expect(Definition.all).to(eq([word]))
+    end
+  end
+
 end
 
