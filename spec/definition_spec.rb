@@ -28,5 +28,23 @@ describe '#Definition' do
       expect(Definition.all).to(eq([]))
     end
   end
+
+  describe ('#find') do
+    it("finds a definition by id") do
+      definition1 = Definition.new({:body => "Hello", :id => nil})
+      definition1.save()
+      definition2 = Definition.new({:body => "World", :id => nil})
+      definition2.save()
+      expect(Definition.find(2)).to(eq(definition2))
+    end
+  end
+
+  describe ('#==') do
+    it("is the same definition if it has the same attributes as another definition") do
+    definition1 = Definition.new({:body => "Hello", :id => 1})
+    definition2 = Definition.new({:body => "Hello", :id => 1})
+    expect(word1).to(eq(word2))
+    end
+  end
 end
 
