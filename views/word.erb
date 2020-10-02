@@ -4,7 +4,7 @@
     <ul>
       <% @definitions.each do |definition| %>
         <li>         
-          <a href="/definitions/<%= definition.id %>"><%= definition.body%></a>     
+          <a href="/words/<%= @word.id %>/definitions/<%= definition.id %>"><%= definition.body%></a>     
         </li>
       <% end %>
     </ul>

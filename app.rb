@@ -75,7 +75,7 @@ patch('/definitions/:id/edit') do
   erb(:edit_definition)
 end
 
-get('/definitions/:definition_id') do 
+get('/words/:id/definitions/:definition_id') do 
   @definition = Definition.find(params[:definition_id].to_i)
   @word_id = params[:id]
   erb(:definition)
