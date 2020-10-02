@@ -52,7 +52,7 @@ describe '#Word' do
       word = Word.new({:title => "Helo", :id => 1})
       word.save()
       word.update_title("Hello")
-      expect(word.title).to(eq("Hell"))
+      expect(word.title).to(eq("Hello"))
     end
   end
 
