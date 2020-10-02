@@ -67,7 +67,12 @@ patch('/words/:id') do
   erb(:word)
 end
 
-patch('/definitions/:id/edit') do
+get('/definition/:id/edit') do
+  @definition = Definition.find(params[:id].to_i())
+  erb(:edit_definition)
+end
+
+patch('/definition/:id') do
   @definition = Definition.find(params[:id].to_i())
   body = params[:body]
   @definition.update_body(body)
