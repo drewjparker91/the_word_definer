@@ -35,7 +35,7 @@ describe '#Word' do
       word1.save()
       word2 = Word.new({:title => "World", :id => nil})
       word2.save()
-      expect(Word.find(2)).to(eq(word1))
+      expect(Word.find(2)).to(eq(word2))
     end
   end
 
