@@ -1,1 +1,29 @@
-<h4>
+<h4><%= @word.title %></h4>
+
+  <% if @definitions.any? %> 
+    <ul>
+      <% @definitions.each do |definition| %>
+        <li>
+          <% definition.body %>
+        <li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>No definitions yet! Add a definition!</p>
+  <% end %>
+
+  <form action="/words/<%= @word.id %>" method="post">
+    <div class="form-group">
+      <label for="definition_body">Definitions</label>
+      <input id="definition_body" name="definition_body" class='form-control' type="text">
+    </div>
+    <button type="submit" class="btn">Save Definition!</button>
+  </form>
+
+  <form action="/word/<%= @word.id() %>" method="post">
+    <input name="_method" type="hidden" value="delete">
+    <button type="submit">Delete Word!</button>
+  </form>
+
+  <a href='/words'>Go back to your words!</a>
+  
