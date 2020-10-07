@@ -2,6 +2,7 @@ require 'rspec'
 require 'definition'
 
 describe '#Definition' do
+
   before(:each) do
     Definition.clear()
   end
@@ -14,7 +15,7 @@ describe '#Definition' do
 
   describe ('#save') do
     it("saves a definition") do
-      definition = Definition.new({:body => "Hello", :id => nil})
+      definition = Definition.new({:body => "Hello", :id => nil, :word_id => nil})
       definition.save()
       expect(Definition.all).to(eq([definition]))
     end
@@ -22,7 +23,7 @@ describe '#Definition' do
 
   describe ('#clear') do
     it("clears a definition") do
-      definition = Definition.new({:body => "Hello", :id => nil})
+      definition = Definition.new({:body => "Hello", :id => nil, :word_id => nil})
       definition.save()
       Definition.clear()
       expect(Definition.all).to(eq([]))
@@ -31,9 +32,9 @@ describe '#Definition' do
 
   describe ('#find') do
     it("finds a definition by id") do
-      definition1 = Definition.new({:body => "Hello", :id => nil})
+      definition1 = Definition.new({:body => "Hello", :id => nil, :word_id => nil})
       definition1.save()
-      definition2 = Definition.new({:body => "World", :id => nil})
+      definition2 = Definition.new({:body => "World", :id => nil, :word_id => nil})
       definition2.save()
       expect(Definition.find(2)).to(eq(definition2))
     end
@@ -41,15 +42,15 @@ describe '#Definition' do
 
   describe ('#==') do
     it("is the same definition if it has the same attributes as another definition") do
-    definition1 = Definition.new({:body => "Hello", :id => 1})
-    definition2 = Definition.new({:body => "Hello", :id => 1})
+    definition1 = Definition.new({:body => "Hello", :id => 1, :word_id => nil})
+    definition2 = Definition.new({:body => "Hello", :id => 1, :word_id => nil})
     expect(definition1).to(eq(definition2))
     end
   end
 
   describe ('#update_body') do
     it('updates a definition') do
-      definition1 = Definition.new({:body => "Helo", :id => 1})
+      definition1 = Definition.new({:body => "Helo", :id => nil, :word_id => nil})
       definition1.save()
       definition1.update_body("Hello")
       expect(definition1.body).to(eq("Hello"))
@@ -58,9 +59,9 @@ describe '#Definition' do
 
   describe('#delete') do
     it("deletes a definition by id") do
-      definition1 = Definition.new({:body => "Hello", :id => nil})
+      definition1 = Definition.new({:body => "Hello", :id => nil, :word_id => nil})
       definition1.save()
-      definition2 = Definition.new({:body => "World", :id => nil})
+      definition2 = Definition.new({:body => "World", :id => nil, :word_id => nil})
       definition2.save()
       definition1.delete()
       expect(Definition.all).to(eq([definition2]))

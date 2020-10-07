@@ -1,15 +1,15 @@
-<h1>Update Definition: "<%= @definition.body() %>"</h1>
+<h1>Edit Definition: "<%= @definition.body() %>"</h1>
 
-<form action="/definition/ <%= @definition.id %>/edit" method="patch">
+<form action="/words/<%= @word.id %>/definitions/ <%= @definition.id %>" method="post">
   <input name="_method" type="hidden" value="patch">
 
   <label for="body">Edit Definition!</label>
   <input id="body" name="body" type="text">
 
-  <button type="submit">Update</button>
+  <button type="submit">Save!</button>
 </form>
 
-</form><form action="/definition/<%= @definition.id() %>" method="post">
+</form><form action="/words/<%= @word.id %>/definitions/<%= @definition.id() %>" method="post">
   <input name="_method" type="hidden" value="delete">
   <button type="submit">Delete definition!</button>
 </form>

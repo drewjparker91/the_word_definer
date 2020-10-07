@@ -6,10 +6,10 @@
   <label for="title">Edit Word!</label>
   <input id="title" name="title" type="text">
 
-  <button type="submit">Update</button>
+  <button type="submit">Save!</button>
 </form>
 
-</form><form action="/word/<%= @word.id() %>" method="post">
+</form><form action="/words/<%= @word.id() %>" method="post">
   <input name="_method" type="hidden" value="delete">
   <button type="submit">Delete word!</button>
 </form>

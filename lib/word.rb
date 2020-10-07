@@ -25,7 +25,7 @@ class Word
   end
 
   def ==(word_to_compare)   
-    self.title == word.title() && self.id == word.id()
+    self.title == word_to_compare.title() && self.id == word_to_compare.id()
   end
   
   def self.find (id)

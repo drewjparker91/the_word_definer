@@ -1,9 +1,9 @@
 <h3>Definition: "<%= @definition.body %>"</h3>
 
-<form action="/definition/<%= @definition.id %>" method="post">
+<form action="/words/<%= @word_id %>/definitions/<%= @definition.id %>" method="post">
   <input name="_method" type="hidden" value="delete">
   <button type="submit">Delete definition!</button>
 </form>
 
-<p><a href="/definition/<%= @definition.id %>/edit">Edit Definition!</a></p>
+<p><a href="/words/<%= @word_id %>/definitions/<%= @definition.id %>/edit">Edit Definition!</a></p>
 <p><a href="/words/<%= @word_id %>">Back to the word!</a></p>

@@ -2,6 +2,7 @@ require 'rspec'
 require 'word'
 
 describe '#Word' do
+
   before(:each) do
     Word.clear()
   end
