@@ -12,16 +12,6 @@ describe('create a word path', {:type => :feature}) do
   end
 end
 
-# describe('create an edit word path', {:type => :feature}) do
-#   it('creates a word, then edits the word, going back to the word page') do
-#     word = Word.new({:title => 'Hello', :id => nil})
-#     word.save
-#     visit("/words/#{word.id}/edit")
-#     fill_in('title', :with => 'World')
-#     click_on('Save!')
-#     expect(page).to have_content('World')
-#   end    
-# end
 describe('create a definition path', {:type => :feature}) do
   it('creates a definition and appends it onto the word page') do
     word = Word.new({:title => 'Hello', :id => nil})

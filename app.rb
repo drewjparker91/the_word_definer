@@ -77,18 +77,10 @@ patch('/words/:id/definitions/:definition_id') do
   @definition = Definition.find(params[:definition_id].to_i())
   body = params[:body]
   @definition.update_body(body)
-  # @definitions = Definition.find_by_word(params[:definition_id].to_i)
   @word_id = params[:id].to_i
   erb(:definition)
 end
 
-# patch('/words/:id') do
-#   @word = Word.find(params[:id].to_i())
-#   title = params[:title]
-#   @word.update_title(title)
-#   @definitions = Definition.find_by_word(params[:id].to_i)
-#   erb(:word)
-# end
 
 delete('/words/:id/definitions/:definition_id') do
   @definition = Definition.find(params[:definition_id].to_i())
