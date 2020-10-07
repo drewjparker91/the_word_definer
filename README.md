@@ -13,11 +13,21 @@ _Make an application that contains a Word class. The homepage of the app should 
 ## Specifications
 | Spec     | Behavior | Input    | Output   |
 | -------- | -------- | -------- | -------- |
-| 1 |  |  |  |
-| 2 |  |  |  |
-| 3 |  |  |  |
-| 5 |  |  |  | 
-| 4 | |  |  |
+| 1 | Word.all returns an empty array when there are no words | no input | [] |
+| 2 | #save saves a word | word=Word.new, word.save | [word] |
+| 3 | Word.clear clears a word | Word.clear | [] |
+| 4 | #find finds a word by id | word=Word.new, word2=Word.new, Word.find(2) | [word2] | 
+| 5 | #== words are the same if they have the same attributes as another word| word="hello", word2="hello | word1 = word2 |
+| 6 | #update_title updates a word | word=Hello, word.update_title("World") | word = "World" |
+| 7 | #delete deletes a word by id | word1="Hello" & word2="World". word2.delete.  | word1 |
+| 8 | Definition.all returns an empty array when there are no words | no input | [] |
+| 9 | #save saves a definition |  definition=definition.new, definition.save | [definition] |
+| 10 | Definition.clear clears a word | defintion="Word", definition.clear | [] |
+| 11 | #find finds a definition by id | def=Definition.new, def2=Definition.new, Definition.find(2) | def2 |
+| 12 |  #== definitions are the same if they have the same attributes as another definition | def="World", def2="World" | def1=def2 |
+| 13 | #update_body updates a definition | def="World", def.update_body("Word") | def="Word" |
+| 14 | #delete deletes a definition by id | def1="Hello" def2="World. def2.delete. | def1 |
+
 
 ## Setup/Installation Requirements
 
@@ -36,6 +46,7 @@ _There are no known bugs at this time._
 * Ruby Gems: rspec, pry 
 * Stack Overflow
 * ruby-lang.org/en/documentation
+* Heroku
 
 ### License
 
