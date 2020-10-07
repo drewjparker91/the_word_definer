@@ -25,6 +25,7 @@ To Extend This Project:
 * Clone this repository: https://github.com/drewjparker91/AnagramsAndAntigrams.git.
 * Run "bundle" in the terminal to bundle the ruby gems
 * Run "ruby app.rb" in the terminal
+* the following URL will take you to the app: https://stark-lake-72503.herokuapp.com/
 
 ## Known Bugs
 _There are no known bugs at this time._
